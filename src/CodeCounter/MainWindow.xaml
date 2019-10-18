@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CodeCounter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="CodeCounter" Height="450" Width="800" Background="White" ResizeMode="CanResizeWithGrip">
+    <Grid Background="#FF3F3F46">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Foreground="White" >Folder:</Label>
+        <TextBox x:Name="tb_folder" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10"></TextBox>
+        <Button Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="White" Margin="10" Padding="10 5 10 5" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="BrowseFolder_Click">Browse</Button>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Foreground="White" Header="Programming Languages">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cb_csharp" Grid.Column="0" VerticalAlignment="Center" Foreground="White" Margin="10">C#</CheckBox>
+                <CheckBox x:Name="cb_cplus" Grid.Column="1" VerticalAlignment="Center" Foreground="White" Margin="10">C++</CheckBox>
+                <CheckBox x:Name="cb_c" Grid.Column="2" VerticalAlignment="Center" Foreground="White" Margin="10">C</CheckBox>
+                <CheckBox x:Name="cb_java" Grid.Column="3" VerticalAlignment="Center" Foreground="White" Margin="10">Java</CheckBox>
+                <CheckBox x:Name="cb_python" Grid.Column="4" VerticalAlignment="Center" Foreground="White" Margin="10">Python</CheckBox>
+                <CheckBox x:Name="cb_vhdl" Grid.Column="5" VerticalAlignment="Center" Foreground="White" Margin="10">VHDL</CheckBox>
+                <CheckBox x:Name="cb_matlab" Grid.Column="6" VerticalAlignment="Center" Foreground="White" Margin="10">MATLAB</CheckBox>
+                <CheckBox x:Name="cb_html" Grid.Column="7" VerticalAlignment="Center" Foreground="White" Margin="10">HTML</CheckBox>
+                <Button Grid.Column="8"  VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" Width="75" Margin="5" Padding="5" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="CheckAll_Click">Check All</Button>
+                <Button Grid.Column="9"  VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="75" Margin="5" Padding="5" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="UncheckAll_Click">Uncheck All</Button>
+            </Grid>
+        </GroupBox>
+
+        <Button Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="10" Padding="10 5 10 5" FontSize="24" Width="150" AutomationProperties.IsRequiredForForm="True" Foreground="White" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="Start_Click">Start</Button>
+        <TextBox x:Name="tb_result" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Foreground="White" TextWrapping="Wrap" AcceptsReturn="True" Background="#FF3F3F46" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
